@@ -139,6 +139,10 @@ public class Course {
 		unpassed = true;
 	}
 
+	public boolean isUnpassed() {
+		return unpassed;
+	}
+	
 	public void unpublish() {
 		type = 3;
 	}

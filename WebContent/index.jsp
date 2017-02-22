@@ -38,9 +38,8 @@
                                 <input class="form-control" type="password" id="password" name="password" placeholder="密码"/>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <input type="submit" class="btn btn-primary" value="查询"/>  
-                        </div>
+                        <div style="float:left"> <a href="res/JwxtQuery.apk" target="_blank"><img src="images/Android.png" height="36px" width="36px"/>Android版下载</a></div>
+                        <input type="submit" class="btn btn-primary"  style="float:right" value="查询"/>
                         </form>
                     </div>
                 </div>

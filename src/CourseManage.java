@@ -60,6 +60,9 @@ public class CourseManage {
 		for (String courseID : data.keySet()) {
 			Course course = data.get(courseID);
 			Map<String, String> m = new HashMap<String, String>();
+			m.put("passed", String.valueOf(course.isPassed()));
+			m.put("unpassed", String.valueOf(course.isUnpassed()));
+			m.put("type", String.valueOf(course.getType()));
 			m.put("name", course.getCourseName());
 			m.put("credit", String.valueOf(course.getCredit()));
 			if (course.getType() == 4) {

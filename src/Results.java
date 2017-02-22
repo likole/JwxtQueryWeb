@@ -81,6 +81,7 @@ public class Results extends HttpServlet {
 		try {
 			Login();
 			request.setAttribute("data", data);
+			request.setAttribute("info", courseManage.getInfo());
 			request.getRequestDispatcher("/results.jsp").forward(request, response);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
