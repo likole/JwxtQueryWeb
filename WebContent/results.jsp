@@ -25,6 +25,15 @@ table.tablesorter thead tr .headerSortUp {
 table.tablesorter thead tr .headerSortDown {
 	background-image: url(images/desc.gif);
 }
+
+@media screen and (max-width: 767px) {
+	.td-responsive {
+		max-width: 200px;
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		overflow: hidden;
+	}
+}
 </style>
 <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -47,14 +56,11 @@ table.tablesorter thead tr .headerSortDown {
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="index.jsp">首页</a></li>
-					<li class="active"><a href="#">查询结果</a></li>
+					<li class="active"><a>查询结果</a></li>
 					<li><a href="res/JwxtQuery.apk">Android版下载</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<ul class="nav navbar-nav">
-						<li><a><small>V1.0.0</small></a></li>
-					</ul>
-
+					<li><a><small>V1.0.0</small></a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -62,7 +68,7 @@ table.tablesorter thead tr .headerSortDown {
 		<!-- /.container-fluid -->
 	</nav>
 	<div class="container" style="margin-top: 72px">
-<!-- 		<div class="alert alert-info alert-dismissable">
+		<!-- 		<div class="alert alert-info alert-dismissable">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-hidden="true">&times;</button>
 			点击表格标题可进行排序
@@ -73,10 +79,10 @@ table.tablesorter thead tr .headerSortDown {
 		<table id="results"
 			class="table table-striped table-hover table-bordered tablesorter">
 			<thead>
-				<th>课程名</th>
-				<th>学分</th>
-				<th>分数</th>
-				<th>绩点</th>
+				<th>课程名&nbsp;&nbsp;&nbsp;</th>
+				<th>学分&nbsp;&nbsp;&nbsp;</th>
+				<th>分数&nbsp;&nbsp;&nbsp;</th>
+				<th>绩点&nbsp;&nbsp;&nbsp;</th>
 			</thead>
 			<tbody>
 				<%
@@ -92,7 +98,10 @@ table.tablesorter thead tr .headerSortDown {
 						out.print("class='warning'");
 					}
 				}%>>
-					<td>
+					<td class="td-responsive"
+						title="						<%if (map.get("name") != null) {
+					out.print(map.get("name"));
+				}%>">
 						<%
 							if (map.get("name") != null) {
 									if ("0".equals(map.get("type"))) {
